@@ -60,36 +60,31 @@ def calculate_area_semicircle(radius):
     area = math.pi * radius ** 2 / 2
     return area
 
-shape_name = input("Enter the shape name: ")
+def calculate_volume_cuboid(length, breadth, height):
+    if length < 0 or breadth < 0 or height < 0:
+        raise ValueError("Length, breadth, and height cannot be negative")
+    volume = length * breadth * height
+    return volume
 
-if shape_name == "circle":
-    try:
-        radius = float(input("Enter the radius: "))
-        area = calculate_area_circle(radius)
-        print(f"The area of the circle is {area}")
-    except ValueError as error:
-        print(error)
+def calculate_volume_sphere(radius):
+    if radius < 0:
+        raise ValueError("Radius cannot be negative")
+    volume = 4/3 * math.pi * radius ** 3
+    return volume
 
-elif shape_name == "rectangle":
-    try:
-        length = float(input("Enter the length: "))
-        breadth = float(input("Enter the breadth: "))
-        area = calculate_area_rectangle(length, breadth)
-        print(f"The area of the rectangle is {area}")
-    except ValueError as error:
-        print(error)
+def calculate_volume_cylinder(radius, height):
+    if radius < 0 or height < 0:
+        raise ValueError("Radius and height cannot be negative")
+    volume = math.pi * radius ** 2 * height
+    return volume
 
-elif shape_name == "square":
-    try:
-        side = float(input("Enter the side: "))
-        area = calculate_area_square(side)
-        print(f"The area of the square is {area}")
-    except ValueError as error:
-        print(error)
+def calculate_volume_cone(radius, height):
+    if radius < 0 or height < 0:
+        raise ValueError("Radius and height cannot be negative")
+    volume = 1/3 * math.pi * radius ** 2 * height
+    return volume
 
-elif shape_name == "trapezoid":
-    try:
-        base1 = float(input("Enter the first base: "))
-        base2 = float(input("Enter the second base: "))
-        height = float(input("Enter the height: "))
-        area = calculate_area_trapezoid(base1, base2, height)
+def calculate_volume_pyramid(base_area, height):
+    if base_area < 0 or height < 0:
+        raise ValueError("Base area and height cannot be negative")
+    volume = 1/
